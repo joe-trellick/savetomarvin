@@ -1,0 +1,17 @@
+{
+    "name": "Save to Marvin",
+    "version": "0.1",
+    "description": "Create a task in Amazing Marvin for the current page",
+    "permissions": ["activeTab", "storage"],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "images/save-to-marvin-16.png",
+        "32": "images/save-to-marvin-32.png",
+        "48": "images/save-to-marvin-48.png",
+        "128": "images/save-to-marvin-128.png"
+    },
+    "options_page": "options.html", 
+    "manifest_version": 2
+}

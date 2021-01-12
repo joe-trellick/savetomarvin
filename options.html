@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #content {
+        display:flex;
+        flex-flow: column;
+      }
+      #content div {
+        padding: 5px;
+      }
+      #apiKey {
+        width: 230px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div>
+        <label for="apiKey">Amazing Marvin API Key:</label>
+        <input id="apiKey" type="text">
+      </div>
+      <div>
+        <p>Use the "apiToken" value found in the "Credentials" section of the "API (beta)" strategy.</p>
+      </div>
+      <div>
+        <button id="submitButton">Save</button>
+      </div>
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>
