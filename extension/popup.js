@@ -39,16 +39,10 @@ function newTaskSucceeded(title, dateString) {
   const successTextPara = document.getElementById('successText');
   const successTextHTML = 'New task <b>' + title + '</b> added on <b>' + dateString + '</b>.';
   successTextPara.innerHTML = successTextHTML;
-  // const marvinURL = 'https://app.amazingmarvin.com/';
-  // chrome.tabs.create({ url: marvinURL });
-  // window.close();
   confirmation.style.display = 'block';
 }
 
 function addTask(title, pageUrl) {
-  const req = new XMLHttpRequest();
-  const baseUrl = 'https://serv.amazingmarvin.com/api/addTask';
-
   let date = new Date();
   date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
   const dateString = date.toISOString().slice(0,10);
@@ -58,22 +52,27 @@ function addTask(title, pageUrl) {
   data.note = pageUrl;
   data.day = dateString;
 
-  req.open('POST', baseUrl, true);
-  req.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
-  req.setRequestHeader('X-API-Token', storedApiToken);
-  req.send(JSON.stringify(data));
-
-  req.onreadystatechange = function() { // Call a function when the state changes.
-    if (this.readyState === XMLHttpRequest.DONE) {
-      if (this.status === 200) {
-        const responseJSON = JSON.parse(req.responseText);
-        newTaskSucceeded(responseJSON.title, responseJSON.day);
-      } else {
-        showError();
-      }
-      endLoad();
+  fetch('https://serv.amazingmarvin.com/api/addTask', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      'X-API-Token': storedApiToken
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    endLoad();
+    if (!response.ok) {
+      throw new Error('Network error');
     }
-  }
+    return response.json();
+  })
+  .then(responseJSON => {
+    newTaskSucceeded(responseJSON.title, responseJSON.day);
+  })
+  .catch((error) => {
+    showError();
+  });
 };
 
 const titleField = document.getElementById('title');
