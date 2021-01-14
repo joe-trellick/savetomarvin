@@ -1,6 +1,8 @@
 # Save to Marvin Chrome Extension
 A simple Chrome extension to save the current web page to the [Amazing Marvin](https://amazingmarvin.com/) productivity service.
 
+NOTE: This is an independent project, not affiliated with the makers of Amazing Marvin.
+
 ## How It Works
 (TBD)
 

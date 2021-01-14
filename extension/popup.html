@@ -2,12 +2,42 @@
 <html>
   <head>
     <style>
+      :root {
+        --input-radius: 10px;
+      }
+
+      body {
+        margin: 0px;
+        background-color: #f6f9f9;
+      }
+
       #content {
         display:flex;
         flex-flow: column;
+        margin: 8px;
       }
       #content div {
         padding: 5px;
+      }
+
+      #title {
+        border-radius: var(--input-radius);
+        padding-left: var(--input-radius);
+        padding-right: var(--input-radius);
+        margin-top: 5px;
+        resize: none;  /* Disable resize dragger */
+        outline: none;
+        border-color: #eaefef;
+        box-shadow: 0 7px 14px rgba(50, 77, 93, 0.03), 0 3px 6px rgba(0, 0, 0, 0.02);
+      }
+
+      #title:focus {
+        border-color: #e6eaea;
+      }
+
+      #title::selection {
+        color: white;
+        background: #2ec5cc;
       }
 
       #error {
@@ -18,6 +48,11 @@
         width: 100%;
         padding: 2px;
         justify-content: center;
+      }
+
+      #error p {
+        font-weight: bold;
+        color: white;
       }
       
       #dimmer {
@@ -93,7 +128,7 @@
   </head>
   <body>
     <div id="error">
-      <p>A problem occurred, ensure the API token is set in <a href="/options.html" target="_blank">options</a></p>
+      <p><b>A problem occurred, ensure the API token is set in <a href="/options.html" target="_blank">options</a>.</p>
     </div>
     <div id="content">
       <div>
