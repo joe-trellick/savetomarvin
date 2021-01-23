@@ -9,6 +9,7 @@
       body {
         margin: 0px;
         background-color: #f6f9f9;
+        color: rgb(38, 38, 38);
       }
 
       #content {
@@ -27,8 +28,12 @@
         margin-top: 5px;
         resize: none;  /* Disable resize dragger */
         outline: none;
-        border-color: #eaefef;
+        border-color: rgba(0, 0, 0, 0);
         box-shadow: 0 7px 14px rgba(50, 77, 93, 0.03), 0 3px 6px rgba(0, 0, 0, 0.02);
+      }
+
+      label {
+        font-weight: normal;
       }
 
       #title:focus {
@@ -38,6 +43,23 @@
       #title::selection {
         color: white;
         background: #2ec5cc;
+      }
+
+      .button {
+        background-image: linear-gradient(165deg, rgb(38, 214, 196) 0%, rgb(16, 177, 211) 100%);
+        border-width: 0;
+        box-shadow: rgba(28, 197, 203, 0.5) 0px 2px 15px 0px;
+        color: white;
+        border-radius: 4px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        outline: none;
+      }
+
+      .button:active {
+        transform: translateY(1px);
       }
 
       #error {
@@ -136,7 +158,7 @@
         <textarea id="title" cols=40 rows=3"></textarea>
       </div>
       <div>
-        <button id="submitButton">Create Item</button>
+        <button id="submitButton" class="button">Create Item</button>
       </div>
     </div>
     <div id="dimmer">
