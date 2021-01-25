@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
     <style>
       :root {
         --input-radius: 10px;
@@ -8,8 +9,6 @@
 
       body {
         margin: 0px;
-        background-color: #f6f9f9;
-        color: rgb(38, 38, 38);
       }
 
       #content {
@@ -17,6 +16,7 @@
         flex-flow: column;
         margin: 8px;
       }
+      
       #content div {
         padding: 5px;
       }
@@ -43,23 +43,6 @@
       #title::selection {
         color: white;
         background: #2ec5cc;
-      }
-
-      .button {
-        background-image: linear-gradient(165deg, rgb(38, 214, 196) 0%, rgb(16, 177, 211) 100%);
-        border-width: 0;
-        box-shadow: rgba(28, 197, 203, 0.5) 0px 2px 15px 0px;
-        color: white;
-        border-radius: 4px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 9px;
-        padding-bottom: 9px;
-        outline: none;
-      }
-
-      .button:active {
-        transform: translateY(1px);
       }
 
       #error {
@@ -104,7 +87,8 @@
         display: flex;
         flex-flow: column;
         justify-content: center;
-        align-items: center;
+        align-items: 
+center;
         height: 100%;
         padding: 10px;
       }
