@@ -1,6 +1,6 @@
 {
     "name": "Save to Marvin",
-    "version": "0.1",
+    "version": "1.0",
     "description": "Create a task in Amazing Marvin for the current page",
     "permissions": ["activeTab", "storage"],
     "browser_action": {
