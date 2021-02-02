@@ -71,3 +71,6 @@ This was created as a short side project in January 2021 to scratch my own itch.
 As such, I'm not allocating any further time to pull requests, bug reports, or to provide any other support.
 
 However, I'm sharing this in case anyone else finds it useful. You're free to use it, adapt it, or use it as the basis for some other project.
+
+## Privacy Policy
+You can find the privacy policy for this software [here](PrivacyPolicy.md).
